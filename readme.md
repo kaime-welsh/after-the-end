@@ -1,6 +1,7 @@
 # After the End
 > Your shuttle has crashlanded on a derelict rim world, and now you have to find your way out.
 > Collect scrap from the planets surface, fight off aliens, trade with locals, and make your way home.
+
 [<img src="git_images/gameplay.gif">]()
 
 ## Goals
