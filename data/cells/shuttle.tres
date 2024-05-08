@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CellData" load_steps=6 format=3 uid="uid://jabgokqlfe0k"]
+
+[ext_resource type="Script" path="res://scripts/model/event_script.gd" id="1_aaqqq"]
+[ext_resource type="Script" path="res://scripts/model/cell_data.gd" id="1_y3bmi"]
+[ext_resource type="Texture2D" uid="uid://b3crc8t2h6o0q" path="res://assets/textures/monochrome-transparent.png" id="3_e30er"]
+
+[sub_resource type="Resource" id="Resource_sr83n"]
+script = ExtResource("1_aaqqq")
+data = "SFX SHUTTLE
+ENDDAY"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pa32b"]
+atlas = ExtResource("3_e30er")
+region = Rect2(238, 357, 16, 16)
+
+[resource]
+script = ExtResource("1_y3bmi")
+name = "Shuttle"
+description = "Home base."
+probability = 0.0
+tint = Color(1, 1, 0, 1)
+texture = SubResource("AtlasTexture_pa32b")
+interact_event = SubResource("Resource_sr83n")
+solid = false

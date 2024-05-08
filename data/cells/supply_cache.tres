@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CellData" load_steps=6 format=3 uid="uid://cwwpsg8kk2xg8"]
+
+[ext_resource type="Script" path="res://scripts/model/event_script.gd" id="1_uwgxu"]
+[ext_resource type="Script" path="res://scripts/model/cell_data.gd" id="1_wjs78"]
+[ext_resource type="Texture2D" uid="uid://b3crc8t2h6o0q" path="res://assets/textures/monochrome-transparent.png" id="3_ffwmu"]
+
+[sub_resource type="Resource" id="Resource_ktm5g"]
+script = ExtResource("1_uwgxu")
+data = "SFX OXYGEN
+ADD PLAYER SUPPLY 1
+SETCELL EMPTY"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awg2o"]
+atlas = ExtResource("3_ffwmu")
+region = Rect2(289, 204, 16, 16)
+
+[resource]
+script = ExtResource("1_wjs78")
+name = "Supply Cache"
+description = "Another ships emergency drop pods have crash landed here, there could be some supplies inside."
+probability = 0.4
+tint = Color(0, 1, 1, 1)
+texture = SubResource("AtlasTexture_awg2o")
+interact_event = SubResource("Resource_ktm5g")
+solid = false

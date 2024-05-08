@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CellData" load_steps=6 format=3 uid="uid://dyjp8gygw3qiu"]
+
+[ext_resource type="Script" path="res://scripts/model/cell_data.gd" id="1_fqorr"]
+[ext_resource type="Script" path="res://scripts/model/event_script.gd" id="1_qdyha"]
+[ext_resource type="Texture2D" uid="uid://b3crc8t2h6o0q" path="res://assets/textures/monochrome-transparent.png" id="4_ubi31"]
+
+[sub_resource type="Resource" id="Resource_ftvtf"]
+script = ExtResource("1_qdyha")
+data = "SETCELL EMPTY"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awg2o"]
+atlas = ExtResource("4_ubi31")
+region = Rect2(17, 255, 16, 16)
+
+[resource]
+script = ExtResource("1_fqorr")
+name = "Encounter"
+description = "An alien creature appears before you, prepare to fight!"
+probability = 0.3
+tint = Color(1, 0, 0, 1)
+texture = SubResource("AtlasTexture_awg2o")
+interact_event = SubResource("Resource_ftvtf")
+solid = false

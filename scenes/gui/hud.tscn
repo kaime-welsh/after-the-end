@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://bisvnfjbah4e5"]
+
+[ext_resource type="Texture2D" uid="uid://b3crc8t2h6o0q" path="res://assets/textures/monochrome-transparent.png" id="1_gy7jb"]
+[ext_resource type="Script" path="res://scripts/view/hud.gd" id="1_nkhju"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4x52"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+skew = Vector2(-0.2, 0)
+border_width_top = 8
+border_width_right = 8
+border_color = Color(0.305882, 0.305882, 0.305882, 1)
+border_blend = true
+corner_radius_top_right = 64
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hysk5"]
+atlas = ExtResource("1_gy7jb")
+region = Rect2(289, 204, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1a4w"]
+atlas = ExtResource("1_gy7jb")
+region = Rect2(272, 204, 16, 16)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nkhju")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -134.0
+offset_right = 193.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y4x52")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Supplies" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Supplies"]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+texture = SubResource("AtlasTexture_hysk5")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="SupplyLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Supplies"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cargo" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Cargo"]
+modulate = Color(1, 0.4, 0, 1)
+layout_mode = 2
+texture = SubResource("AtlasTexture_e1a4w")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="CargoLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Cargo"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1

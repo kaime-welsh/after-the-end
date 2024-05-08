@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://t8a5851v4yof"]
+
+[ext_resource type="Script" path="res://scripts/view/map_view.gd" id="1_35ub0"]
+[ext_resource type="Script" path="res://main.gd" id="1_enl48"]
+[ext_resource type="Resource" uid="uid://6fceo238axjd" path="res://data/cells/empty.tres" id="2_ea7bi"]
+[ext_resource type="Script" path="res://scripts/model/map_data.gd" id="3_hylq8"]
+
+[sub_resource type="Resource" id="Resource_5tmlq"]
+script = ExtResource("3_hylq8")
+radius = 5
+cells = Array[Resource("res://scripts/model/cell_data.gd")]([ExtResource("2_ea7bi")])
+
+[node name="Main" type="Node"]
+script = ExtResource("1_enl48")
+map_data = SubResource("Resource_5tmlq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="View" type="Node" parent="."]
+
+[node name="MapView" type="Node2D" parent="View"]
+script = ExtResource("1_35ub0")
+cell_size = null

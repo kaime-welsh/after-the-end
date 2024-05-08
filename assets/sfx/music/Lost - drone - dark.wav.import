@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c45ygyna8lnx2"
+path="res://.godot/imported/Lost - drone - dark.wav-ccb7f054f541c6e5365bd183bdfe5edf.sample"
+
+[deps]
+
+source_file="res://assets/sfx/music/Lost - drone - dark.wav"
+dest_files=["res://.godot/imported/Lost - drone - dark.wav-ccb7f054f541c6e5365bd183bdfe5edf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

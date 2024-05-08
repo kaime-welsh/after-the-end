@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MapData" load_steps=9 format=3 uid="uid://bye4fo456vtdb"]
+
+[ext_resource type="Script" path="res://scripts/model/map_data.gd" id="1_gcnu2"]
+[ext_resource type="Resource" uid="uid://dyjp8gygw3qiu" path="res://data/cells/encounter.tres" id="1_tbrs1"]
+[ext_resource type="Resource" uid="uid://voygsrpstca5" path="res://data/cells/exhausted.tres" id="1_twh4p"]
+[ext_resource type="Resource" uid="uid://f0fgpj5pk08d" path="res://data/cells/merchant.tres" id="2_43lre"]
+[ext_resource type="Resource" uid="uid://eh4iir6yqc5u" path="res://data/cells/scrap_pile.tres" id="3_b1y8f"]
+[ext_resource type="Resource" uid="uid://cwwpsg8kk2xg8" path="res://data/cells/supply_cache.tres" id="4_g7850"]
+[ext_resource type="Resource" uid="uid://jabgokqlfe0k" path="res://data/cells/shuttle.tres" id="5_4bv14"]
+[ext_resource type="Resource" uid="uid://6fceo238axjd" path="res://data/cells/empty.tres" id="6_wicv6"]
+
+[resource]
+script = ExtResource("1_gcnu2")
+radius = 5
+cells = Array[Resource("res://scripts/model/cell_data.gd")]([ExtResource("1_tbrs1"), ExtResource("2_43lre"), ExtResource("3_b1y8f"), ExtResource("4_g7850"), ExtResource("6_wicv6"), ExtResource("1_twh4p")])
+empty_cell = ExtResource("6_wicv6")
+center_cell = ExtResource("5_4bv14")
+blocked_cell = ExtResource("1_twh4p")

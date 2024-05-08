@@ -1,0 +1,48 @@
+[gd_resource type="AudioBusLayout" load_steps=4 format=3 uid="uid://cdx6tpf74w2f6"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_n240c"]
+resource_name = "Reverb"
+room_size = 0.06
+damping = 0.04
+spread = 0.4
+hipass = 0.52
+dry = 0.25
+wet = 0.2
+
+[sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_gp3vo"]
+resource_name = "HighPassFilter"
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_37h0w"]
+resource_name = "LowPassFilter"
+
+[resource]
+bus/1/name = &"Music"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/2/name = &"SFX"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectReverb_n240c")
+bus/2/effect/0/enabled = true
+bus/2/effect/1/effect = SubResource("AudioEffectHighPassFilter_gp3vo")
+bus/2/effect/1/enabled = true
+bus/3/name = &"Ambient"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectLowPassFilter_37h0w")
+bus/3/effect/0/enabled = true
+bus/4/name = &"UI"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.0
+bus/4/send = &"Master"

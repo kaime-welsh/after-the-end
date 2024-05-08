@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CellData" load_steps=6 format=3 uid="uid://eh4iir6yqc5u"]
+
+[ext_resource type="Script" path="res://scripts/model/event_script.gd" id="1_hxc46"]
+[ext_resource type="Texture2D" uid="uid://b3crc8t2h6o0q" path="res://assets/textures/monochrome-transparent.png" id="3_enwuc"]
+[ext_resource type="Script" path="res://scripts/model/cell_data.gd" id="3_ukysd"]
+
+[sub_resource type="Resource" id="Resource_wv8t0"]
+script = ExtResource("1_hxc46")
+data = "SFX SCRAP
+SETCELL EMPTY
+ADD PLAYER CARGO 1 STATIC"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awg2o"]
+atlas = ExtResource("3_enwuc")
+region = Rect2(272, 204, 16, 16)
+
+[resource]
+script = ExtResource("3_ukysd")
+name = "Scrap Pile"
+description = "A pile of rusted scrap metal. Could be useful."
+probability = 0.2
+tint = Color(1, 0.4, 0, 1)
+texture = SubResource("AtlasTexture_awg2o")
+interact_event = SubResource("Resource_wv8t0")
+solid = false

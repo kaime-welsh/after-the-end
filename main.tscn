@@ -1,0 +1,93 @@
+[gd_scene load_steps=19 format=3 uid="uid://t8a5851v4yof"]
+
+[ext_resource type="Script" path="res://scripts/view/map_view.gd" id="1_35ub0"]
+[ext_resource type="Script" path="res://main.gd" id="1_enl48"]
+[ext_resource type="Resource" uid="uid://bye4fo456vtdb" path="res://data/core_map_data.tres" id="2_51vp4"]
+[ext_resource type="Script" path="res://scripts/model/sound_data.gd" id="3_anuch"]
+[ext_resource type="Resource" uid="uid://ykx5tc4jtop7" path="res://data/sounds/footsteps.tres" id="3_igu0u"]
+[ext_resource type="PackedScene" uid="uid://duvacs36mn6lh" path="res://scenes/entities/player.tscn" id="4_dyk7k"]
+[ext_resource type="PackedScene" uid="uid://bisvnfjbah4e5" path="res://scenes/gui/hud.tscn" id="5_hci1e"]
+[ext_resource type="AudioStream" uid="uid://dfk350y4v7kd4" path="res://assets/sfx/interactions/merchant.wav" id="5_iam5d"]
+[ext_resource type="AudioStream" uid="uid://ublwbqea4xi1" path="res://assets/sfx/interactions/pickup_oxygen.wav" id="6_obfas"]
+[ext_resource type="AudioStream" uid="uid://bstwqkqjxkkbp" path="res://assets/sfx/interactions/pickup_scrap.wav" id="7_587bx"]
+[ext_resource type="AudioStream" uid="uid://b32ttmtmirphn" path="res://assets/sfx/interactions/ship_enter.ogg" id="8_fbfhb"]
+[ext_resource type="Script" path="res://scripts/core/audio_manager.gd" id="11_exbya"]
+[ext_resource type="AudioStream" uid="uid://cqnc656a8mop0" path="res://assets/sfx/ambient/spaceEngineLow_001.ogg" id="12_76yam"]
+[ext_resource type="AudioStream" uid="uid://ch5nriq24kowc" path="res://assets/sfx/music/Lost(Loop) - drone - dark.wav" id="13_d87wj"]
+
+[sub_resource type="Resource" id="Resource_c03xr"]
+script = ExtResource("3_anuch")
+name = "MERCHANT"
+streams = Array[AudioStream]([ExtResource("5_iam5d")])
+pitch = 1.0
+gain = 0.0
+
+[sub_resource type="Resource" id="Resource_tws20"]
+script = ExtResource("3_anuch")
+name = "OXYGEN"
+streams = Array[AudioStream]([ExtResource("6_obfas")])
+pitch = 1.0
+gain = -10.0
+
+[sub_resource type="Resource" id="Resource_6mxju"]
+script = ExtResource("3_anuch")
+name = "SCRAP"
+streams = Array[AudioStream]([ExtResource("7_587bx")])
+pitch = 1.0
+gain = 0.0
+
+[sub_resource type="Resource" id="Resource_n8aqv"]
+script = ExtResource("3_anuch")
+name = "SHUTTLE"
+streams = Array[AudioStream]([ExtResource("8_fbfhb")])
+pitch = 1.0
+gain = 0.0
+
+[node name="Main" type="Node"]
+process_mode = 3
+script = ExtResource("1_enl48")
+map_data = ExtResource("2_51vp4")
+
+[node name="View" type="Node" parent="."]
+process_mode = 1
+
+[node name="Camera" type="Camera2D" parent="View"]
+unique_name_in_owner = true
+zoom = Vector2(4, 4)
+
+[node name="MapView" type="Node2D" parent="View"]
+unique_name_in_owner = true
+script = ExtResource("1_35ub0")
+
+[node name="Player" parent="View" instance=ExtResource("4_dyk7k")]
+unique_name_in_owner = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI" instance=ExtResource("5_hci1e")]
+
+[node name="Audio" type="Node" parent="."]
+script = ExtResource("11_exbya")
+sound_data = Array[ExtResource("3_anuch")]([ExtResource("3_igu0u"), SubResource("Resource_c03xr"), SubResource("Resource_tws20"), SubResource("Resource_6mxju"), SubResource("Resource_n8aqv")])
+
+[node name="SFX" type="Node" parent="Audio"]
+unique_name_in_owner = true
+
+[node name="Ambient" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("12_76yam")
+volume_db = -15.0
+pitch_scale = 0.8
+autoplay = true
+bus = &"Ambient"
+
+[node name="Music" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("13_d87wj")
+volume_db = -6.0
+autoplay = true
+bus = &"Music"
+
+[node name="UI" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+bus = &"UI"

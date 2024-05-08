@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="SoundData" load_steps=17 format=3 uid="uid://ykx5tc4jtop7"]
+
+[ext_resource type="Script" path="res://scripts/model/sound_data.gd" id="1_koc4b"]
+[ext_resource type="AudioStream" uid="uid://do151bmmoh8t8" path="res://assets/sfx/footsteps/footstep_concrete_000.ogg" id="1_x4wll"]
+[ext_resource type="AudioStream" uid="uid://bdskuc14fu5u1" path="res://assets/sfx/footsteps/footstep_concrete_001.ogg" id="2_mlnks"]
+[ext_resource type="AudioStream" uid="uid://b7nmpypj31ucx" path="res://assets/sfx/footsteps/footstep_concrete_002.ogg" id="3_e6vdb"]
+[ext_resource type="AudioStream" uid="uid://h5rfrlgbo5l0" path="res://assets/sfx/footsteps/footstep_concrete_003.ogg" id="4_4lv05"]
+[ext_resource type="AudioStream" uid="uid://bd3dj4j48ovav" path="res://assets/sfx/footsteps/footstep_concrete_004.ogg" id="5_uffxw"]
+[ext_resource type="AudioStream" uid="uid://bupiq1ypuuhjk" path="res://assets/sfx/footsteps/footstep_grass_000.ogg" id="6_d0fkl"]
+[ext_resource type="AudioStream" uid="uid://bvkr40nbgb4v7" path="res://assets/sfx/footsteps/footstep_grass_001.ogg" id="7_6fwwu"]
+[ext_resource type="AudioStream" uid="uid://cgeiarb0fvi3e" path="res://assets/sfx/footsteps/footstep_grass_002.ogg" id="8_asky5"]
+[ext_resource type="AudioStream" uid="uid://fgfrroal6ofh" path="res://assets/sfx/footsteps/footstep_grass_003.ogg" id="9_o5h3a"]
+[ext_resource type="AudioStream" uid="uid://cnk8ppd5jcjy6" path="res://assets/sfx/footsteps/footstep_grass_004.ogg" id="10_hni54"]
+[ext_resource type="AudioStream" uid="uid://deo14a0punlen" path="res://assets/sfx/footsteps/footstep_snow_000.ogg" id="11_3ojsu"]
+[ext_resource type="AudioStream" uid="uid://cct6mprajlyij" path="res://assets/sfx/footsteps/footstep_snow_001.ogg" id="12_tupoi"]
+[ext_resource type="AudioStream" uid="uid://dop888iqplkw7" path="res://assets/sfx/footsteps/footstep_snow_002.ogg" id="13_ploj8"]
+[ext_resource type="AudioStream" uid="uid://dxdk2gai7emm4" path="res://assets/sfx/footsteps/footstep_snow_003.ogg" id="14_u7kbt"]
+[ext_resource type="AudioStream" uid="uid://dv1y5pj7n0kn7" path="res://assets/sfx/footsteps/footstep_snow_004.ogg" id="15_gajoh"]
+
+[resource]
+script = ExtResource("1_koc4b")
+name = "FOOTSTEP"
+streams = Array[AudioStream]([ExtResource("1_x4wll"), ExtResource("2_mlnks"), ExtResource("3_e6vdb"), ExtResource("4_4lv05"), ExtResource("5_uffxw"), ExtResource("6_d0fkl"), ExtResource("7_6fwwu"), ExtResource("8_asky5"), ExtResource("9_o5h3a"), ExtResource("10_hni54"), ExtResource("11_3ojsu"), ExtResource("12_tupoi"), ExtResource("13_ploj8"), ExtResource("14_u7kbt"), ExtResource("15_gajoh")])
+pitch = 1.0
+gain = 0.0
